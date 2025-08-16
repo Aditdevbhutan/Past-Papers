@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRHSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="school-logo">
+                <img src="logo.jpg" alt="School Logo" style="height: 48px;">
+            </div>
+            <h1>Phuenthsoling Rigser Higher Secodary School</h1>
+            <p>Download Past Papers</p>
+        </div>
+
+        <div id="mainContent" class="main-content">
+            <div class="class-grid">
+                <div class="class-card" onclick="showSubjects(7)">
+                    <div class="icon">📚</div>
+                    <h3>Class 7</h3>
+                    <p>Access past papers for Class 7 subjects</p>
+                </div>
+                <div class="class-card" onclick="showSubjects(8)">
+                    <div class="icon">📖</div>
+                    <h3>Class 8</h3>
+                    <p>Access past papers for Class 8 subjects</p>
+                </div>
+                <div class="class-card" onclick="showSubjects(9)">
+                    <div class="icon">📝</div>
+                    <h3>Class 9</h3>
+                    <p>Access past papers for Class 9 subjects</p>
+                </div>
+                <div class="class-card" onclick="showSubjects(10)">
+                    <div class="icon">🔬</div>
+                    <h3>Class 10</h3>
+                    <p>Access past papers for Class 10 subjects</p>
+                </div>
+                <div class="class-card" onclick="showSubjects(11)">
+                    <div class="icon">🧮</div>
+                    <h3>Class 11</h3>
+                    <p>Access past papers for Class 11 subjects</p>
+                </div>
+                <div class="class-card" onclick="showSubjects(12)">
+                    <div class="icon">🎯</div>
+                    <h3>Class 12</h3>
+                    <p>Access past papers for Class 12 subjects</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="subjectPage" class="subject-page">
+            <button class="back-btn" onclick="goBack()">← Back to Classes</button>
+            <div id="subjectContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
