@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRHSS Digital Learning Revolution | Past Papers Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            color: #ffd93d;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 0 20px;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffd93d;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .features-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .problem-solution {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .ps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ps-content h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffd93d;
+        }
+
+        .ps-list {
+            list-style: none;
+        }
+
+        .ps-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qr-showcase {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            margin: 100px 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .qr-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .qr-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .qr-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .qr-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            min-width: 250px;
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            background: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            color: #667eea;
+        }
+
+        .qr-info {
+            margin-top: 20px;
+        }
+
+        .future-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .future-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .website-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .website-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .ps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <img src="logo.jpg" alt="PRHSS Logo" style="width: 110px; margin-bottom: 25px; border-radius: 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.12);" />
+            <h1 class="hero-title floating">📚 Digital Learning Revolution</h1>
+            <h2 class="hero-subtitle">Transform How Students Access Past Papers</h2>
+            <p class="school-name">Phuentsholing Rigsar Higher Secondary School</p>
+            <p class="hero-description">
+                Introducing PRHSS's groundbreaking digital platform that puts 500+ past papers 
+                at students' fingertips. No more searching, no more delays - just instant access 
+                to academic excellence.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://pastpaperprhss.netlify.app/" class="cta-btn cta-primary" target="_blank">
+                    🚀 Visit Platform
+                </a>
+                <button class="cta-btn cta-secondary" onclick="scrollToQR()">
+                    📱 Mobile Access
+                </button>
+            </div>
+            
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number"></span>
+                        <span class="stat-label">Past Papers Available</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">All The</span>
+                        <span class="stat-label">Subjects Covered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Classes (7-12)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Instant Access</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">🎯 Why Students Love It</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Instant Access</h3>
+                    <p class="feature-description">
+                        No more waiting or searching multiple sources. Access any past paper 
+                        within seconds from any device.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔓</div>
+                    <h3 class="feature-title">No Login Required</h3>
+                    <p class="feature-description">
+                        Simple and hassle-free. Students can download papers immediately 
+                        without creating accounts or remembering passwords.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Works Everywhere</h3>
+                    <p class="feature-description">
+                        Desktop, tablet, or phone - the platform adapts perfectly to any 
+                        screen size for seamless studying anywhere.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Organized by Class</h3>
+                    <p class="feature-description">
+                        Smart organization by class and subject makes finding the right 
+                        papers quick and effortless.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Always Updated</h3>
+                    <p class="feature-description">
+                        New papers are added regularly, ensuring students always have 
+                        access to the latest exam materials.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3 class="feature-title">Exam Ready</h3>
+                    <p class="feature-description">
+                        Comprehensive collection helps students prepare effectively with 
+                        real exam questions and formats.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="ps-grid">
+                <div class="ps-content">
+                    <h3>❌ Problems We Solve</h3>
+                    <ul class="ps-list">
+                        <li>📝 Students struggle to find past papers</li>
+                        <li>⏰ Time wasted searching multiple sources</li>
+                        <li>📄 Physical papers get lost or damaged</li>
+                        <li>🚫 Limited access outside school hours</li>
+                        <li>💸 Photocopying costs add up</li>
+                        <li>🏫 Teachers spend time distributing papers</li>
+                    </ul>
+                </div>
+                
+                <div class="ps-content">
+                    <h3>✅ Our Solution</h3>
+                    <ul class="ps-list">
+                        <li>🔍 One-stop platform for all papers</li>
+                        <li>⚡ Instant downloads in seconds</li>
+                        <li>☁️ Digital storage - never lose papers</li>
+                        <li>🌐 Access anytime, anywhere</li>
+                        <li>💰 Completely free for all students</li>
+                        <li>🤖 Automated distribution system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-showcase" id="qr-section">
+        <div class="container">
+            <h2 class="qr-title">📱 Access on Mobile</h2>
+            <p class="qr-subtitle">Scan to open the platform instantly on your phone</p>
+            
+            <div class="qr-container">
+                <div class="qr-box">
+                    <h3>🌐 Website Access</h3>
+                    <div class="qr-code">
+                        <img src="qr.png" alt="QR Code" style="width: 160px; height: 160px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.10);" />
+                    </div>
+                    <div class="qr-info">
+                        <p><strong>pastpaperprhss.netlify.app</strong></p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Works on all devices</p>
+                    </div>
+                </div>
+                
+                <div class="qr-box">
+                    <h3>🚀 Direct Access</h3>
+                    <div class="qr-code">
+                        <img src="qr.png" alt="QR Code" style="width: 160px; height: 160px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.10);" />
+                    </div>
+                    <div class="qr-info">
+                        <p><strong>Instant Access</strong></p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">No downloads required</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Plans -->
+    <section class="future-section">
+        <div class="container">
+            <h2 class="section-title">🚀 Future Enhancements</h2>
+            <div class="future-grid">
+                <div class="future-card">
+                    <h3>👩‍🏫 Teacher Portal</h3>
+                    <p>Enable teachers to upload and manage past papers directly, making the platform self-sustaining.</p>
+                </div>
+                
+                <div class="future-card">
+                    <h3>🏫 Official School Portal</h3>
+                    <p>Potential to become PRHSS's official digital repository for all academic materials.</p>
+                </div>
+                
+                <div class="future-card">
+                    <h3>📱 Native Mobile App</h3>
+                    <p>Future iOS and Android apps with offline access and push notifications for new papers.</p>
+                </div>
+                
+                <div class="future-card">
+                    <h3>🔍 Smart Search</h3>
+                    <p>Advanced filtering by year, exam type, difficulty level, and topic-based search.</p>
+                </div>
+                
+                <div class="future-card">
+                    <h3>📊 Analytics Dashboard</h3>
+                    <p>Track which papers are most downloaded and identify student preparation patterns.</p>
+                </div>
+                
+                <div class="future-card">
+                    <h3>🌐 Multi-School Network</h3>
+                    <p>Expand to other schools in Bhutan, creating a national past paper sharing network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 style="margin-bottom: 20px;">Experience the Future of Learning</h3>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">
+                Join hundreds of PRHSS students who are already using our platform to ace their exams.
+            </p>
+            
+            <a href="https://pastpaperprhss.netlify.app/" class="website-link" target="_blank">
+                🌐 Visit pastpaperprhss.netlify.app
+            </a>
+            
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #4a5568;">
+                <p>&copy; 2024 Phuentsholing Rigsar Higher Secondary School</p>
+                <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+                    All past papers are the property of PRHSS • Built for students, by students
+                </p>
+                <p style="margin-top: 20px; font-size: 1rem;">
+                    Created by 
+                    <a href="https://github.com/Aditdevbhutan" target="_blank" style="color:#ffd93d; text-decoration:underline; font-weight:600;">
+                        Adit Chhetri
+                    </a>
+                    &nbsp;|&nbsp; Supported by Madam Choki Dema
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToQR() {
+            document.getElementById('qr-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe all animated elements
+            document.querySelectorAll('.feature-card, .future-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+
+        // Add some interactive stats counter animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const targets = ['12', '25', '6', '24/7'];
+            
+            statNumbers.forEach((stat, index) => {
+                if (index === 3) return; // Skip 24/7
+                
+                let current = 0;
+                const target = parseInt(targets[index]);
+                const increment = target / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = targets[index];
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + (index === 0 ? '+' : '');
+                    }
+                }, 30);
+            });
+        }
+
+        // Trigger stats animation when visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+    </script>
+</body>
+</html>
